@@ -1,0 +1,6 @@
+Lib/
+Include/
+Scripts/
+share/
+.git/
+*.py[co]

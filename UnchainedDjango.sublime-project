@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"path": "icecreamratings_project/icecreamratings_project"
+		}
+	],
+    "build_systems":
+    [
+        {
+        "name": "Run Django Test",
+        "env": {"PYTHONPATH":"C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project;C:\\unchainedjango\\Lib\\site-packages"},
+        "cmd": ["C:\\unchainedjango\\Scripts\\activate"],
+        "working_dir": "C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project",
+        "cmd": ["python", "manage.py", "test", "lists"]
+        },
+        {
+        "name": "Run Functional Test",
+        "env": {"PYTHONPATH":"C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project;C:\\unchainedjango\\Lib\\site-packages"},
+        "cmd": ["C:\\unchainedjango\\Scripts\\activate"],
+        "working_dir": "C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project\\lists",
+        "cmd": ["python", "-u", "func_test.py"]
+        }
+    ]
+}
