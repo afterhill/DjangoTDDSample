@@ -18,8 +18,9 @@
         "name": "Run Functional Test",
         "env": {"PYTHONPATH":"C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project;C:\\unchainedjango\\Lib\\site-packages"},
         "cmd": ["C:\\unchainedjango\\Scripts\\activate"],
-        "working_dir": "C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project\\lists",
-        "cmd": ["python", "-u", "func_test.py"]
+        "working_dir": "C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project",
+        "cmd": ["python", "manage.py", "test", "functional_tests"]
+        //"cmd": ["python", "-u", "tests.py"]
         }
     ]
 }

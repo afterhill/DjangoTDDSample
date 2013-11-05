@@ -194,7 +194,8 @@ DJANGO_APPS = (
     # Admin panel and documentation:
     'django.contrib.admin',
     # 'django.contrib.admindocs',
-    'lists'
+    'lists',
+    'functional_tests',
 )
 
 THIRD_PARTY_APPS = (
