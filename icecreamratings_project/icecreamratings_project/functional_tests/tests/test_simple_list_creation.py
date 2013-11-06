@@ -1,21 +1,16 @@
-from django.test import LiveServerTestCase
+from .base import FunctionalTest
+
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import unittest
 
 
-class NewVisitorTest(LiveServerTestCase):
-
-    def setUp(self):
-        self.browser = webdriver.Chrome()
-        self.browser.implicitly_wait(3)
-
-    def tearDown(self):
-        self.browser.quit()
+class NewVisitorTest(FunctionalTest):
 
     def test_can_start_a_list_and_retrieve_it_later(self):
-        self.browser.get(self.live_server_url)
+        url = self.server_url
+        url = url.replace('localhost', '127.0.0.1')
+        self.browser.get(url)
 
         self.assertIn('To-Do lists', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
@@ -35,11 +30,11 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertRegexpMatches(edith_list_url, '/lists/.+')
         self.check_for_row_in_list_table('1: Buy peacock features')
         # self.check_for_row_in_list_table(
-            # '2: Use peacock features to make a fly')
+        #     '2: Use peacock features to make a fly')
 
         self.browser.quit()
         self.browser = webdriver.Chrome()
-        self.browser.get(self.live_server_url)
+        self.browser.get(self.server_url)
 
         page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy peacock features', page_text)
@@ -56,17 +51,3 @@ class NewVisitorTest(LiveServerTestCase):
         page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy peacock features', page_text)
         self.assertIn('Buy milk', page_text)
-
-    def check_for_row_in_list_table(self, item):
-        table = self.browser.find_element_by_id('id_list_table')
-        rows = table.find_elements_by_tag_name('tr')
-        print [item for row in rows]
-        self.assertTrue(
-
-            any(row.text == item for row in rows),
-            "%s did not appear in table -- its text is \n%s" % (
-                item, table.text)
-        )
-
-# if __name__ == '__main__':
-#     unittest.main()
