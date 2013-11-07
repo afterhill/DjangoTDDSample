@@ -20,7 +20,6 @@
         "cmd": ["C:\\unchainedjango\\Scripts\\activate"],
         "working_dir": "C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project",
         "cmd": ["python", "manage.py", "test", "functional_tests"]
-        //"cmd": ["python", "-u", "tests.py"]
         }
     ]
 }

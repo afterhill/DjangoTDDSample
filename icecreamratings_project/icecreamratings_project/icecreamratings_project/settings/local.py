@@ -2,7 +2,7 @@
 
 
 from os.path import join, normpath
-
+import os
 from base import *
 
 
@@ -48,7 +48,7 @@ CACHES = {
 
 # TOOLBAR CONFIGURATION
 # See:
-# https://github.com/django-debug-toolbar/django-debug-toolbar#installation
+# https://github.com/django-debug-toolbar/django-debug-toolbar#inllation
 INSTALLED_APPS += (
     #'debug_toolbar',
 )
@@ -60,7 +60,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 # See:
 # https://github.com/django-debug-toolbar/django-debug-toolbar#installation
 MIDDLEWARE_CLASSES += (
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 # See:
@@ -70,14 +70,3 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TEMPLATE_CONTEXT': True,
 }
 # END TOOLBAR CONFIGURATION
-
-STATIC_ROOT = ''
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = ()
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)

@@ -30,9 +30,7 @@ class FunctionalTest(LiveServerTestCase):
     def check_for_row_in_list_table(self, item):
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        print [item for row in rows]
         self.assertTrue(
-
             any(row.text == item for row in rows),
             "%s did not appear in table -- its text is \n%s" % (
                 item, table.text)

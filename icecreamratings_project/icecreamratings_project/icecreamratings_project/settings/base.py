@@ -12,6 +12,7 @@ DJANGO_ROOT = dirname(dirname(abspath(__file__)))
 # Absolute filesystem path to the top-level project folder:
 SITE_ROOT = dirname(DJANGO_ROOT)
 
+
 # Site name:
 SITE_NAME = basename(DJANGO_ROOT)
 
@@ -88,7 +89,8 @@ MEDIA_URL = '/media/'
 
 # STATIC FILE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
-STATIC_ROOT = normpath(join(SITE_ROOT, 'assets'))
+STATIC_ROOT = normpath(join(SITE_ROOT, 'asset'))
+
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
@@ -98,6 +100,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     normpath(join(SITE_ROOT, 'static')),
 )
+
 
 # See:
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
