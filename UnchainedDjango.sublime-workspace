@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Item",
+				"ItemForm  (class)"
+			],
+			[
+				"STA",
+				"STATIC_ROOT"
+			],
+			[
 				"error",
 				"error_text"
 			],
@@ -88,55 +96,42 @@
 	"buffers":
 	[
 		{
-			"file": "icecreamratings_project/icecreamratings_project/lists/tests/test_models.py",
-			"settings":
-			{
-				"buffer_size": 1369,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "icecreamratings_project/icecreamratings_project/lists/models.py",
-			"settings":
-			{
-				"buffer_size": 271,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "icecreamratings_project/icecreamratings_project/lists/views.py",
-			"settings":
-			{
-				"buffer_size": 1021,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "icecreamratings_project/icecreamratings_project/lists/tests/test_views.py",
 			"settings":
 			{
-				"buffer_size": 3858,
+				"buffer_size": 5116,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "icecreamratings_project/icecreamratings_project/lists/templates/base.html",
+			"contents": "from django.shortcuts import render, redirect\nfrom django.core.exceptions import ValidationError\nfrom django.utils.html import escape\nfrom django.http import HttpRequest\nfrom django.http import HttpResponse\n\nfrom lists.models import Item, List\nfrom lists.forms import ItemForm\n\n\ndef home_page(request):\n    return render(request, 'home.html', {'form': ItemForm()})\n\n\ndef view_list(request, list_id):\n\n    list_ = List.objects.get(id=list_id)\n    items = Item.objects.all().filter(list=list_.id)\n    form = ItemForm()\n    if request.method == 'POST':\n        form = ItemForm(data=request.POST)\n\n        if form.is_valid():\n            Item.objects.create(text=request.POST['text'], list=list_)\n            return redirect(list_)\n\n    return render(request, 'list.html', {'list': list_, 'form': form})\n\n\ndef new_list(request):\n\n    form = ItemForm(data=request.POST)\n\n    if form.is_valid():\n        list_ = List.objects.create()\n        Item.objects.create(text=request.POST['text'], list=list_)\n        return redirect(list_)\n    else:\n        return render(request, 'home.html', {\"form\": form})\n",
+			"file": "icecreamratings_project/icecreamratings_project/lists/views.py",
+			"file_size": 1097,
+			"file_write_time": 130285721868321736,
 			"settings":
 			{
-				"buffer_size": 1214,
+				"buffer_size": 1096,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "icecreamratings_project/icecreamratings_project/lists/forms.py",
+			"settings":
+			{
+				"buffer_size": 873,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "icecreamratings_project/icecreamratings_project/functional_tests/tests/test_list_item_validation.py",
+			"file": "icecreamratings_project/icecreamratings_project/lists/templates/list.html",
 			"settings":
 			{
-				"buffer_size": 990,
+				"buffer_size": 335,
 				"line_ending": "Windows"
 			}
 		}
 	],
-	"build_system": "Run Functional Test",
+	"build_system": "Run Django Test",
 	"command_palette":
 	{
 		"height": 335.0,
@@ -172,34 +167,46 @@
 	},
 	"file_history":
 	[
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/views.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/forms.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/templates/base.html",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/base.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/test_list_item_validation.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/models.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/test_simple_list_creation.py",
+		"/C/unchainedjango/UnchainedDjango.sublime-project",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/test_layout_and_styling.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/tests/test_forms.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/tests/test_views.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/tests/__init__.py",
+		"/C/Users/Administrator/.codeintel/config",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/templates/home.html",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/urls.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/tests/test_models.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/templates/list.html",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/models.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/static/css/custom.css",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/icecreamratings_project/settings/base.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/icecreamratings_project/urls.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/icecreamratings_project/settings/local.py",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/static/css/bootstrap.min.css",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/templates/404.html",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/templates/500.html",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/templates/base2.html",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/templates/500.html",
+		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/templates/404.html",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/__init__.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/tests/test_all.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/test/__init__.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/test/test_all.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/test_layout_and_styling.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/__init__.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/__init__.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/base.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/test_simple_list_creation.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/test_list_item_validation.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests/tests.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/functional_tests/tests.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/icecreamratings_project/settings/base.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/templates/base.html",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/templates/home.html",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/templates/list.html",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/icecreamratings_project/settings/local.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/icecreamratings_project/settings/test.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/views.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/tests.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/templates/base2.html",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/templates/base.html",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/urls.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/icecreamratings_project/urls.py",
-		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/models.py",
-		"/C/unchainedjango/UnchainedDjango.sublime-project",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/lists/func_test.py",
 		"/C/unchainedjango/.gitignore",
 		"/C/unchainedjango/icecreamratings_project/.gitignore",
@@ -211,7 +218,6 @@
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/icecreamratings_project/settings/__init__.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/test.py",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
-		"/C/Users/Administrator/.codeintel/config",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/manage.py",
 		"/C/unchainedjango/Lib/site-packages/django/contrib/sessions/backends/file.py",
 		"/C/unchainedjango/icecreamratings_project/icecreamratings_project/icecreamratings_project/events/managers.py",
@@ -250,6 +256,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"goes",
+			"  ",
+			"find_element_by_id('id_new_item')",
+			"print",
+			"static",
+			"toolbar",
+			"f12",
 			"offset",
 			"static",
 			"input",
@@ -268,6 +281,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"inputbox"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -278,23 +292,23 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "icecreamratings_project/icecreamratings_project/lists/tests/test_models.py",
+					"file": "icecreamratings_project/icecreamratings_project/lists/tests/test_views.py",
 					"settings":
 					{
-						"buffer_size": 1369,
+						"buffer_size": 5116,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1338,
-								1338
+								5116,
+								5116
 							]
 						],
 						"settings":
@@ -408,25 +422,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 690.0,
+						"translation.y": 2668.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "icecreamratings_project/icecreamratings_project/lists/models.py",
+					"file": "icecreamratings_project/icecreamratings_project/lists/views.py",
 					"settings":
 					{
-						"buffer_size": 271,
+						"buffer_size": 1096,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								210,
-								210
+								636,
+								636
 							]
 						],
 						"settings":
@@ -535,7 +549,141 @@
 							},
 							"codeintel_tooltips": "popup",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 805.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "icecreamratings_project/icecreamratings_project/lists/forms.py",
+					"settings":
+					{
+						"buffer_size": 873,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								515,
+								515
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -544,529 +692,27 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "icecreamratings_project/icecreamratings_project/lists/views.py",
-					"settings":
-					{
-						"buffer_size": 1021,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								133,
-								133
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 207.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 3,
-					"file": "icecreamratings_project/icecreamratings_project/lists/tests/test_views.py",
+					"file": "icecreamratings_project/icecreamratings_project/lists/templates/list.html",
 					"settings":
 					{
-						"buffer_size": 3858,
+						"buffer_size": 335,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2838,
-								2838
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1702.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "icecreamratings_project/icecreamratings_project/lists/templates/base.html",
-					"settings":
-					{
-						"buffer_size": 1214,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								491,
-								491
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 156.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "icecreamratings_project/icecreamratings_project/functional_tests/tests/test_list_item_validation.py",
-					"settings":
-					{
-						"buffer_size": 990,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								522,
-								522
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 276.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1076,7 +722,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 37.0
 	},
 	"input":
 	{
@@ -1107,11 +753,11 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 257.0
+		"height": 240.0
 	},
 	"replace":
 	{
-		"height": 0.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1130,10 +776,10 @@
 		],
 		"width": 0.0
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 276.0,
+	"side_bar_width": 246.0,
 	"status_bar_visible": true
 }

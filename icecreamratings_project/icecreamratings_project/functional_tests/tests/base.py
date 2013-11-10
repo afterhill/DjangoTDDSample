@@ -35,3 +35,6 @@ class FunctionalTest(LiveServerTestCase):
             "%s did not appear in table -- its text is \n%s" % (
                 item, table.text)
         )
+
+    def get_item_input_box(self):
+        return self.browser.find_element_by_id('id_text')
