@@ -36,18 +36,18 @@ class ListViewTest(TestCase):
 
     def test_display_item_form(self):
         list_ = List.objects.create()
-        response = self.client.get('/lists/%d' % list_.id)
+        response = self.client.get('/lists/%d/' % list_.id)
         self.assertIsInstance(response.context['form'], ItemForm)
         self.assertContains(response, 'name="text"')
 
     def post_invalid_input(self):
         list_ = List.objects.create()
         return self.client.post(
-            '/lists/%d/', data={'text': ''})
+            '/lists/%d/' % list_.id, data={'text': ''})
 
     def test_invalid_input_means_nothing_saved_to_db(self):
         self.post_invalid_input()
-        sefl.assertEqual(Item.objects.all().count(), 0)
+        self.assertEqual(Item.objects.all().count(), 0)
 
     def test_invalid_input_renders_list_template(self):
         response = self.post_invalid_input()

@@ -16,15 +16,13 @@ def view_list(request, list_id):
 
     list_ = List.objects.get(id=list_id)
     items = Item.objects.all().filter(list=list_.id)
-    form = ItemForm()
-    if request.method == 'POST':
-        form = ItemForm(data=request.POST)
+    form = ItemForm(data=request.POST or None)
 
-        if form.is_valid():
-            Item.objects.create(text=request.POST['text'], list=list_)
-            return redirect(list_)
+    if form.is_valid():
+        Item.objects.create(text=request.POST['text'], list=list_)
+        return redirect(list_)
 
-    return render(request, 'list.html', {'list': list_, 'form': form })
+    return render(request, 'list.html', {'list': list_, 'form': form, 'items': items})
 
 
 def new_list(request):
