@@ -13,8 +13,6 @@ class ItemFromTest(TestCase):
     def test_form_validation_for_blank_items(self):
         form = ItemForm(data={'text': ''})
 
-        print form.errors
-
         self.assertFalse(form.is_valid())
         self.assertEqual(
             form.errors['text'], [EMPTY_LIST_ERROR]
