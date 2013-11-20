@@ -148,6 +148,25 @@
 			}
 		},
 		{
+			"contents": "Package Control Messages\n========================\n\nAutoPEP8:\n--------\n\n  AutoPEP8 1.0.5 (2013/11/17):\n      * autopep8 -> 0.9.6\n      - \"verbose\" option was removed from the settings\n  \n  AutoPEP8 1.0.4 (2013/08/04):\n  + different behaviour for right click context menu (issue #22)\n      Option \"file_menu_behaviour\":\n          \"always\": menu appears always, even folder doesn't contain *.py files\n          \"never\":  menu never appears\n          \"ifneed\": default value, menu appears only if path or childs contain *.py file\n      Option \"file_menu_search_depth\" (default 3) define max search depth for \"ifneed\" mode\n  * pep8 -> 1.4.6\n  * autopep8 -> 0.9.2\n  \n  AutoPEP8 1.0.3 (2013/06/07):\n  * fix issue with Win7 in ST3\n  \n  AutoPEP8 1.0:\n  + support ST3\n  + support per-project settings (https://github.com/wistful/SublimeAutoPEP8/blob/master/Readme.md#per-project-settings)\n  + show unfixed errors in the output panel\n  + syntax can be provided by settings (`syntax_list` option)\n  + use threads to avoid freezing sublime\n  * fix issue with `format_on_save` option\n  + added `aggressive` option \n  * change default values of `verbose` and `ignore` options\n  \n  AutoPEP8 0.9.3:\n  + support ST3\n  * change list options in the config\n  \n  AutoPEP8 0.9.2:\n  + Initial support for ST3. (thanks dnatag)\n  * update pep8.py to version 1.4.6a0\n  * update autopep8.py to version 0.8.7\n  \n  AutoPEP8 0.9.1:\n  * fix conflicts with SublimeLinter plugin\n  \n  AutoPEP8 0.9:\n  * use autopep8.py module instead of spawn the process\n  + improve speed of formatting\n  \n  AutoPEP8 0.8:\n  * fixed issue with exception while removing open file\n  * update pep8.py to version 1.4.2a0\n  * update autopep8.py to version 0.8.6\n  \n  AutoPEP8 0.7:\n  + autoformat on save\n  + sidebar menu\n  + autoformat/preview selected text\n  - cursor and scroll position are lost after \"Format Code\"\n  - encoding issue\n",
+			"settings":
+			{
+				"buffer_size": 1880,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"scratch": true
+			}
+		},
+		{
+			"contents": " def print_bin(number):\n     mask = 1 << 7\n     for i in range(8):\n         if mask & number == 0:\n             print 0\n         else:\n             print 1\n         mask = mask >> 1\n",
+			"settings":
+			{
+				"buffer_size": 182,
+				"line_ending": "Windows",
+				"name": "def print_bin(number):"
+			}
+		},
+		{
 			"file": "icecreamratings_project/icecreamratings_project/functional_tests/tests/base.py",
 			"settings":
 			{
@@ -335,7 +354,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -1000,6 +1019,266 @@
 				},
 				{
 					"buffer": 5,
+					"settings":
+					{
+						"buffer_size": 1880,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1880,
+								1880
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"settings":
+					{
+						"buffer_size": 182,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								182
+							]
+						],
+						"settings":
+						{
+							"auto_name": "def print_bin(number):",
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "icecreamratings_project/icecreamratings_project/functional_tests/tests/base.py",
 					"settings":
 					{
@@ -1027,7 +1306,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "icecreamratings_project/icecreamratings_project/functional_tests/tests/test_layout_and_styling.py",
 					"settings":
 					{
@@ -1055,7 +1334,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "icecreamratings_project/icecreamratings_project/functional_tests/tests/test_simple_list_creation.py",
 					"settings":
 					{
