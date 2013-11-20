@@ -19,7 +19,7 @@
         "env": {"PYTHONPATH":"C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project;C:\\unchainedjango\\Lib\\site-packages"},
         "cmd": ["C:\\unchainedjango\\Scripts\\activate"],
         "working_dir": "C:\\unchainedjango\\icecreamratings_project\\icecreamratings_project",
-        "cmd": ["python", "manage.py", "test", "functional_tests.ItemValidationTest.test_error_message_are_cleared_on_input"]
+        "cmd": ["python", "manage.py", "test", "functional_testss"]
         }
     ]
 }

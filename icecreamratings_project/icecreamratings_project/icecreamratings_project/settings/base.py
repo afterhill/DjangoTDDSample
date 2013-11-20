@@ -204,7 +204,11 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     # Database migration helpers:
     'south',
+    'accounts'
 )
+
+AUTH_USER_MODEL = 'accounts.ListUser'
+AUTHENTICATION_BACKENDS = ('accounts.authentication.PersonaAuthenticationBackend', )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (

@@ -8,6 +8,8 @@ from lists.models import Item, List
 from lists.forms import ItemForm, DUPLICATE_ITEM_ERROR, ExistingListItemForm
 
 
+
+
 def home_page(request):
     return render(request, 'home.html', {'form': ItemForm()})
 
