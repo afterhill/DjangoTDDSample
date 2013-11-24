@@ -5,11 +5,10 @@ from django.shortcuts import redirect
 
 from django.views.decorators.csrf import csrf_exempt
 
+
 @csrf_exempt
 def login(request):
     user = authenticate(assertion=request.POST['assertion'])
-
-    print "Got User: ", user
 
     if user is not None:
         auth_login(request, user)
@@ -17,6 +16,7 @@ def login(request):
     return redirect('/')
 
 
+@csrf_exempt
 def logout(request):
     auth_logout(request)
     return redirect('/')

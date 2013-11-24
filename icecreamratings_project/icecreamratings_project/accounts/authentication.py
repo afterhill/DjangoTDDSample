@@ -6,11 +6,11 @@ class PersonaAuthenticationBackend(object):
     def authenticate(self, assertion):
         data = {'assertion': assertion, 'audience': 'localhost'}
 
-        print 'sending to mozilla', data
+        #print 'sending to mozilla', data
 
         resp = requests.post('https://verifier.login.persona.org/verify', data=data)
 
-        print 'got response: ', resp
+        #print 'got response: ', resp
 
         if resp.ok:
             verification_data = resp.json()
