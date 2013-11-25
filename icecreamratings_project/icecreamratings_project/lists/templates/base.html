@@ -7,7 +7,7 @@
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/include.orig.js"></script>
-<script src="../../accounts/static/accounts.js"></script>
+<script src="/static/js/accounts.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -19,9 +19,26 @@ $(document).ready(function() {
     };
 
     Superlists.Accounts.initialize(navigator, user, token, urls);
+
+    var loginLink = document.getElementById('login');
+
+    if (loginLink) {
+        loginLink.onclick = function() {
+            navigator.id.request();
+        }
+    }
+
+    var logoutLink = document.getElementById('logout');
+
+    if (logoutLink) {
+        logoutLink.onclick = function() {
+            navigator.id.logout();
+        }
+    }
 });
 </script>
 
+<!--
 <script>
 $(document).ready(function() {
     var loginLink = document.getElementById('login');
@@ -60,6 +77,7 @@ $(document).ready(function() {
 
 });
 </script>
+-->
 </head>
 <body>
 

@@ -207,8 +207,10 @@ THIRD_PARTY_APPS = (
     'accounts'
 )
 
-AUTH_USER_MODEL = 'accounts.ListUser'
-AUTHENTICATION_BACKENDS = ('accounts.authentication.PersonaAuthenticationBackend', )
+# AUTH_USER_MODEL = 'accounts.ListUser'
+AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = (
+    'accounts.authentication.PersonaAuthenticationBackend', )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
