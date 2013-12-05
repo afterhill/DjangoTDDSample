@@ -12,6 +12,6 @@ class LayoutAndStylingTest(FunctionalTest):
 
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
-            504,
+            515,
             delta=3
         )
